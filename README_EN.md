@@ -105,7 +105,7 @@ Shared UI components, themes, and interaction primitives come from [yukkcat/nano
 | ⚙️ | Scheduling and concurrency | Multi-account selection, account-processing concurrency, per-account image concurrency, parallel images, account switching, quotas, and rate-limit state |
 | 🌐 | Proxy egress | Account and account-group proxies, multi-egress proxy groups, per-node image concurrency, rotation, default and fallback egress, and connectivity checks |
 | 📊 | Logs and monitoring | Persisted call records, active requests, recent and slow requests, account switches, egress details, image stage timelines, and raw upstream diagnostics |
-| 🖼️ | Images and files | Local/WebDAV storage, gallery, tags, thumbnails, downloads, ZIP archives, compression, cleanup, PPT/PSD artifacts, and optional image upscaling |
+| 🖼️ | Images and files | Local/WebDAV/multiple-R2-target storage, gallery, tags, thumbnails, downloads, ZIP archives, compression, cleanup, PPT/PSD artifacts, and optional image upscaling |
 | ✨ | Prompt library | Local prompt assets, cloud-source synchronization, categorized selection, and source health |
 | 💾 | Data and backups | SQLite, PostgreSQL 18, R2 backups, retention policies, request trends, success rates, and model metrics |
 | 🖥️ | Admin console | Dashboard, accounts, proxies, logs, real-time monitoring, gallery, chat and image studio, and settings on desktop and mobile |
@@ -122,7 +122,7 @@ flowchart LR
   Services --> Scheduler["Account scheduling and proxy egress"]
   Scheduler --> Upstream["ChatGPT Web"]
   Services --> AppDB["Application Database<br/>SQLite / PostgreSQL 18"]
-  Services --> Assets["Images and generated files<br/>Local / WebDAV"]
+  Services --> Assets["Images and generated files<br/>Local / WebDAV / multiple R2 targets"]
   Services --> Monitor["In-process real-time monitor"]
   Services --> Backup["R2 backup"]
 ```
